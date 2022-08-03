@@ -22,10 +22,10 @@ View the [Apollo Server documentation for data sources](https://www.apollographq
 
 ## Usage
 
-To get started, install the `apollo-datasource-http` package:
+To get started, install the `memoizing-apollo-datasource-http` package:
 
 ```bash
-npm install apollo-datasource-http
+npm install memoizing-apollo-datasource-http
 ```
 
 To define a data source, extend the [`HTTPDataSource`](./src/http-data-source.ts) class and implement the data fetching methods that your resolvers require. Data sources can then be provided via the `dataSources` property to the `ApolloServer` constructor, as demonstrated in the section below.
@@ -50,7 +50,7 @@ Your implementation of these methods can call on convenience methods built into 
 
 ```ts
 import { Pool } from 'undici'
-import { HTTPDataSource } from 'apollo-datasource-http'
+import { HTTPDataSource } from 'memoizing-apollo-datasource-http'
 
 const datasource = new (class MoviesAPI extends HTTPDataSource {
   constructor(baseURL: string, pool: Pool) {
